@@ -1,0 +1,23 @@
+server:
+  port: 8082
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://mahmud.db.elephantsql.com:5432/sgenayod?socketTimeout=3
+    username: sgenayod
+    password: DqJFKJNNRpJKcYm2TPt3ryTjKFxwWcNc
+    driverClassName: org.postgresql.Driver
+
